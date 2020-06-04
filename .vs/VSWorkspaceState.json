@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.idea",
     "\\catalog",
     "\\catalog\\templates",
     "\\catalog\\templates\\catalog"

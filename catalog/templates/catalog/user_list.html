@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>
+    Список пользователей</ h1>
+    {% if user_list %}
+    <ul>
+        {% for user in user_list %}
+        <li>
+            <a href="{{user.get_absolute_url}}">{{user.last_name}}</a> ({{user.first_name}}) ({{user.date_of_birth}})
+        </li>
+        {% endfor %}
+
+    </ul>
+
+    {% else %}
+    <p>Нет пользователей.</p>
+    {% endif %}
+
+    {% endblock %}

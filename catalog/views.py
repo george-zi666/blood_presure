@@ -34,3 +34,11 @@ class MeasureListView(generic.ListView):
 
 class MeasureDetailView(generic.DetailView):
     model = Measure
+
+class UserListView(generic.ListView):
+    model = User
+
+class UserDetailView(generic.DetailView):
+    model = User
+
+

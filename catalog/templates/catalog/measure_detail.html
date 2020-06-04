@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Title: {{ measure.title }}</h1>
 
-<p><strong>User:</strong> <a href="">{{ measure.user }}</a></p> <!-- user detail link not yet defined -->
+<p><strong>User:</strong> <a href="{% url 'user-detail' measure.user.pk %}">{{ measure.user }}</a></p> <!-- user detail link not yet defined -->
 <p><strong>Last_name:</strong> {{ measure.last_name }}</p>
 
 

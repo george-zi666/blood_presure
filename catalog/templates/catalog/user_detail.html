@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Title: {{ measure.title }}</h1>
+
+<p><strong>Имя:</strong> {{ user.first_name }}</p> 
+<p><strong>Фамилия:</strong> {{ user.last_name }}</p>
+<p><strong>Дата рождения:</strong> {{ user.date_of_birth }}</p>
+
+
+<div style="margin-left:20px;margin-top:20px">
+    <h4>Данные пользователя</h4>
+
+    {% for measure in user.measure_set.all %}
+    <hr>
+    <p><strong>Измерения:</strong><a href="{% url 'measure-detail' measure.pk %}">{{ measure.title }}</a></p>
+    {% endfor %}
+    {% for copy in user.usersmeasurement_set.all %}
+    <p><strong>Дата выполнения:</strong> {{ copy.date_measure }}</p>
+    {% endfor %}
+</div>
+{% endblock %}
+
