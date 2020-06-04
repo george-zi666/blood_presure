@@ -1,0 +1,17 @@
+{% extends "base_generic.html"%}
+
+{% block content%}
+<h1>
+    Измерения пользователей </ h1>
+    <p>
+        Добро пожаловать </ p>
+          
+    <p>
+        Таблица имеет следующее количество данных: </ p>
+        <ul>
+            <li> <strong> Измерения: </ strong> {{num_measures}} </ li>
+            <li> <strong> Измерения пользователя: </ strong> {{num_measurements}} </ li>
+            <li> <strong> Выполненные измерения: </ strong> {{num_measurements_perform}} </ li>
+            <li> <strong> Пользователи : </ STRONG>{{num_users}} </ li>
+                    </ ul>
+                    {% endblock%}

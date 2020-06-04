@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Title: {{ measure.title }}</h1>
+
+<p><strong>User:</strong> <a href="">{{ measure.user }}</a></p> <!-- user detail link not yet defined -->
+<p><strong>Last_name:</strong> {{ measure.last_name }}</p>
+
+
+<div style="margin-left:20px;margin-top:20px">
+    <h4>Измерения</h4>
+
+    {% for copy in measure.usersmeasurement_set.all %}
+    <hr>
+    <p class="{% if copy.status == 'p' %}text-success{% elif copy.status == 'n' %}text-danger{% else %}text-warning{% endif %}">
+        {{ copy.get_status_display }}
+    </p>
+    {% if copy.status == 'p' %}<p><strong>Дата выполнения:</strong> {{ copy.date_measure }}</p>
+    <p><strong>Систолическое давление:</strong> {{ copy.systolic }}</p>
+    <p><strong>Диастолическое давление:</strong> {{ copy.dyastolic }}</p>
+    <p><strong>Пульс:</strong> {{ copy.pulse }}</p>{% endif %}
+    <p>Нет измерений</p>
+    {% endfor %}
+</div>
+{% endblock %}

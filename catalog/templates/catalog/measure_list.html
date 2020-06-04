@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Список измерений</ h1> 
+    {% if measure_list %}
+    <ul>
+        {% for measure in measure_list %}
+        <li>
+            <a href="{{measure.get_absolute_url}}">{{measure.title}}</a> ({{measure.user}})
+            </li>
+        {% endfor %}
+         
+    </ul> 
+            
+        {% else %}
+            <p>Нет измерений.</P> 
+        {% endif %}
+                
+ {% endblock %}

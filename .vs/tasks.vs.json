@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "задача-measure_list",
+      "appliesTo": "catalog/measure_list.html",
+      "type": "launch"
+    }
+  ]
+}
